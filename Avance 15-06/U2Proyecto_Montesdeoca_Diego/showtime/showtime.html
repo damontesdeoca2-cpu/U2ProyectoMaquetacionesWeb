@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funciones — ChullaCine</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/general.css">
+  <link rel="stylesheet" href="../css/showtime.css">
+  <link rel="icon" href="../images/gafas-3d.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">ChullaCine</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../services/services.html">Cartelera</a></li>
+          <li><a href="../showtime/showtime.html" class="active">Funciones</a></li>
+          <li><a href="../offers/offers.html">Ofertas</a></li>
+          <li><a href="../about/about.html">Acerca</a></li>
+          <li><a href="../contact/contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <form action="showtime.html" method="get">
+        <div class="header-actions">
+          <label for="search"><button class="button small" type="submit">Enviar</button></label>
+          <input class="search" type="search" placeholder="Ingrese que quiere buscar..." id="buscar" name="buscar">
+          <a class="button small" href="../sesion/sesion.html">Iniciar sesión</a>
+        </div>
+      </form>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Seleccionar función</h1>
+    <p class="muted">Elige horario, sala y butacas</p>
+
+    <div id="selector-funcion">
+      <div class="card">
+        <div>
+          <img class="poster-thumb" src="https://i.ytimg.com/vi/fzW5YvU_fKU/hqdefault.jpg" alt="Neon Genesis"
+           >
+          <h3>Neon Genesis: Odyssey</h3>
+          <p class="muted">2h 45min • Sci-Fi</p>
+          <div class="muted">
+            <div><strong>Director:</strong> Elena Vance</div>
+            <div><strong>Idioma:</strong> Español/Inglés</div>
+          </div>
+        </div>
+
+        <div>
+          <label for="cambiar-pelicula">Cambiar película</label>
+          <select id="cambiar-pelicula" name="pelicula_seleccionada">
+            <option value="index.html" selected>Neon Genesis: Odyssey</option>
+            <option value="?movie=love-lights">Love & Lights</option>
+            <option value="?movie=family-tales">Family Tales</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card">
+        <form method="get" action="showtime.html" class="formulario">
+          <div>
+            <div class="campo">
+              <label>Horario</label>
+              <select name="horario">
+                <option>14:00 - Sala IMAX</option>
+                <option>16:30 - Sala 2D</option>
+                <option selected>19:15 - Sala 4K</option>
+                <option>21:45 - Sala Premium</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label>Tipo de sala</label>
+              <select name="sala">
+                <option>Estándar</option>
+                <option>IMAX</option>
+                <option>4K HDR</option>
+                <option>Premium + Sonido</option>
+              </select>
+            </div>
+          </div>
+
+          <p>── PANTALLA ──</p>
+
+          <div id="mapa-butacas" class="seat-map"
+           >
+            <!-- Fila A -->
+            <input type="checkbox" id="a1" name="seat" value="A1"><label for="a1" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A1</span>
+            <input type="checkbox" id="a2" name="seat" value="A2"><label for="a2" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A2</span>
+            <input type="checkbox" id="a3" name="seat" value="A3"><label for="a3" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A3</span>
+            <input type="checkbox" id="a4" name="seat" value="A4"><label for="a4" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A4</span>
+            <input type="checkbox" id="a5" name="seat" value="A5"><label for="a5" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A5</span>
+            <input type="checkbox" id="a6" name="seat" value="A6"><label for="a6" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A6</span>
+            <input type="checkbox" id="a7" name="seat" value="A7"><label for="a7" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A7</span>
+            <input type="checkbox" id="a8" name="seat" value="A8"><label for="a8" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A8</span>
+            <input type="checkbox" id="a9" name="seat" value="A9"><label for="a9" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A9</span>
+            <input type="checkbox" id="a10" name="seat" value="A10"><label for="a10" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>A10</span>
+
+            <!-- Fila B -->
+            <input type="checkbox" id="b1" name="seat" value="B1"><label for="b1" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B1</span>
+            <input type="checkbox" id="b2" name="seat" value="B2"><label for="b2" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B2</span>
+            <input type="checkbox" id="b3" name="seat" value="B3"><label for="b3" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B3</span>
+            <input type="checkbox" id="b4" name="seat" value="B4"><label for="b4" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B4</span>
+            <input type="checkbox" id="b5" name="seat" value="B5"><label for="b5" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B5</span>
+            <input type="checkbox" id="b6" name="seat" value="B6"><label for="b6" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B6</span>
+            <input type="checkbox" id="b7" name="seat" value="B7"><label for="b7" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B7</span>
+            <input type="checkbox" id="b8" name="seat" value="B8"><label for="b8" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B8</span>
+            <input type="checkbox" id="b9" name="seat" value="B9"><label for="b9" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B9</span>
+            <input type="checkbox" id="b10" name="seat" value="B10"><label for="b10" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>B10</span>
+
+            <!-- Fila C -->
+            <input type="checkbox" id="c1" name="seat" value="C1"><label for="c1" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C1</span>
+            <input type="checkbox" id="c2" name="seat" value="C2"><label for="c2" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C2</span>
+            <input type="checkbox" id="c3" name="seat" value="C3"><label for="c3" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C3</span>
+            <input type="checkbox" id="c4" name="seat" value="C4"><label for="c4" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C4</span>
+            <input type="checkbox" id="c5" name="seat" value="C5"><label for="c5" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C5</span>
+            <input type="checkbox" id="c6" name="seat" value="C6"><label for="c6" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C6</span>
+            <input type="checkbox" id="c7" name="seat" value="C7"><label for="c7" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C7</span>
+            <input type="checkbox" id="c8" name="seat" value="C8"><label for="c8" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C8</span>
+            <input type="checkbox" id="c9" name="seat" value="C9"><label for="c9" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C9</span>
+            <input type="checkbox" id="c10" name="seat" value="C10"><label for="c10" class="seat" data-bs-toggle="tooltip" title="Asiento disponible"></label><span>C10</span>
+          </div>
+
+          <div class="legend">
+            <span><span class="box"></span> Libre</span>
+            <span><span class="box"></span> Seleccionada</span>
+          </div>
+
+          <div>
+            <div class="campo">
+              <label>Cantidad</label>
+              <input type="number" name="qty" value="1" min="1" max="8">
+            </div>
+            <div class="campo">
+              <label>Tipo de entrada</label>
+              <select name="type">
+                <option>Adulto ($12)</option>
+                <option>Niño ($8)</option>
+                <option>Estudiante ($9)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="reserva">
+            <button class="button secondary" type="reset">Limpiar</button>
+            <button class="button btn-primario" type="submit">Confirmar reserva</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-light">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>Cartelera</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://www.supercines.com/cartelera/santo-domingo/sto-domingo/222#" class="text-muted">Próximos Estrenos</a></li>
+            <li><a href="https://www.supercines.com/quienes-somos" class="text-muted">Quiénes Somos</a></li>
+            <li><a href="https://www.supercines.com/donde-estamos" class="text-muted">Dónde Estamos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Chullacines</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://www.supercines.com/terminos-y-condiciones" class="text-muted">Términos y Condiciones</a></li>
+            <li><a href="https://www.supercines.com/politica-de-privacidad" class="text-muted">Políticas de privacidad</a></li>
+            <li><a href="https://www.supercines.com/politica-cookies" class="text-muted">Políticas de cookies</a></li>
+            <li><a href="https://www.supercines.com/cumpleanios" class="text-muted">Cumpleaños</a></li>
+            <li><a href="https://www.supercines.com/servicios-publicitarios" class="text-muted">Servicios Publicitarios</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Contáctanos</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://www.chullacine.com/escribenos" class="text-muted">Escríbenos</a></li>
+            <li><a href="https://chullacine.com/" class="text-muted">Trabaja con Nosotros</a></li>
+            <li><a href="https://www.e-chullacine.com/" class="text-muted">Facturación Electrónica</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Síguenos</h5>
+          <div class="social-links mb-3">
+            <a href="https://x.com/#!/chullacine1" target="_blank" class="text-light"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/chullacine" target="_blank" class="text-light"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/chullacine/" target="_blank" class="text-light"><i class="fab fa-instagram"></i></a>
+          </div>
+          <h6 class="mt-2">Call Center</h6>
+          <p class="mb-0">1-800-626262</p>
+          <p class="mb-0">Horario: 10h00 - 21h00</p>
+          <p class="mt-2"><a href="../about/about.html" class="text-muted">Más sobre ChullaCine</a></p>
+        </div>
+      </div>
+      <div class="text-center mt-3 small text-muted">© 2026 ChullaCine — Proyecto de práctica</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  </script>
+</body>
+
+</html>
+
+
+

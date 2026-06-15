@@ -1,0 +1,50 @@
+/* ============================================================
+   BLOQUE 1: CARRUSEL (Bootstrap con estilo ChullaCine)
+============================================================ */
+#hero {
+  margin-bottom: 2rem;
+}
+
+.carousel-item {
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.carousel-item .row {
+  background: rgba(15, 15, 23, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================================
+   BLOQUE 2: SECCIÓN DE ESTRENOS (Flexbox)
+============================================================ */
+#estrenos .cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+#estrenos .card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  transition: transform 0.3s ease;
+}
+
+#estrenos .card:hover {
+  transform: translateY(-5px);
+}
+
+/* ============================================================
+   BLOQUE 3: TARJETAS
+============================================================ */
+.poster-thumb {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}

@@ -1,0 +1,65 @@
+/* ============================================================
+   BLOQUE 1: PELÍCULA DESTACADA (Grid)
+============================================================ */
+#pelicula-destacada > div {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+#pelicula-destacada img {
+  width: 100%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+
+/* ============================================================
+   BLOQUE 2: GALERÍA DE OTRAS PELÍCULAS CON GRID
+============================================================ */
+#otras-peliculas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+#otras-peliculas .card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+#otras-peliculas .card:hover {
+  transform: translateY(-5px);
+}
+
+#otras-peliculas .poster-thumb {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   BLOQUE 3: HORARIOS
+============================================================ */
+.times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.time-btn {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.time-btn:hover {
+  background: #b13bff;
+  transform: translateY(-2px);
+}

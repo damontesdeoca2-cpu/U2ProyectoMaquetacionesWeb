@@ -1,0 +1,49 @@
+/* ============================================================
+   BLOQUE 1: HISTORIA
+============================================================ */
+#historia {
+  padding: 1rem 0;
+}
+
+/* ============================================================
+   BLOQUE 2: CARDS GRID
+============================================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ============================================================
+   BLOQUE 3: PREGUNTAS FRECUENTES
+============================================================ */
+#faq details {
+  margin-bottom: 0.75rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700;
+  outline: none;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 0.75rem;
+  transition: transform 0.2s ease;
+  color: rgba(244, 245, 255, 0.7);
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}

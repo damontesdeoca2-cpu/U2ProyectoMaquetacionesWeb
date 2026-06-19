@@ -9,13 +9,17 @@
   <link rel="stylesheet" href="../css/general.css">
   <link rel="stylesheet" href="../css/sesion.css">
   <link rel="icon" href="../images/gafas-3d.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="../index.html">ChullaCine</a>
-      <nav>
+      <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse d-md-block" id="navMenu">
         <ul class="nav-list">
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="../services/services.html">Cartelera</a></li>
@@ -25,89 +29,93 @@
           <li><a href="../contact/contact.html">Contacto</a></li>
         </ul>
       </nav>
-      <form action="sesion.html" method="get" class="formulario">
+      <form action="../sesion/sesion.html" method="get" class="formulario d-none d-md-flex">
         <div class="header-actions">
-          <label for="search"><button class="button small" type="submit">Enviar</button></label>
-          <input class="search" type="search" placeholder="Ingrese que quiere buscar..." id="buscar" name="buscar">
+          <input class="search" type="search" placeholder="Buscar..." id="buscar" name="buscar">
+          <button class="button small" type="submit">Buscar</button>
           <a class="button small" href="../sesion/sesion.html">Iniciar sesión</a>
         </div>
       </form>
+    </div>
   </header>
 
-  <main class="container">
+  <main class="container py-5">
+    <div class="row justify-content-center align-items-center min-vh-75">
+      <div class="col-12 col-md-8 col-lg-5">
+        
+        <div id="login-card" class="card custom-card">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="text-white text-center mb-4 font-weight-bold">Iniciar Sesión</h2>
+            
+            <div class="alert alert-custom mb-4" role="alert">
+              <i class="fas fa-shield-alt me-2"></i> Por seguridad, recuerda que tu contraseña debe incluir caracteres especiales.
+            </div>
 
-    <div id="login-card" class="card">
-      <h2>Iniciar Sesión</h2>
-
-      <!-- Se cambió action="sesion.html" por action="../index.html" -->
-      <form action="../index.html" method="get" class="formulario">
-
-        <div class="mb-3">
-          <label for="usuario" class="form-label">Usuario o Correo Electrónico</label>
-          <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ej: usuario123" required>
+            <form action="../index.html" method="get">
+              <div class="mb-3">
+                <label for="usuario" class="form-label text-white-50">Usuario o Correo Electrónico</label>
+                <input type="text" class="form-control custom-input" id="usuario" name="usuario" placeholder="Ej: usuario123" required>
+              </div>
+              
+              <div class="mb-4">
+                <label for="password" class="form-label text-white-50">Contraseña</label>
+                <input type="password" class="form-control custom-input" id="password" name="password" placeholder="••••••••" maxlength="16"
+                  pattern="^(?=.*[!@#$%^&*(),.?&quot;:{}|<>])[A-Za-z0-9!@#$%^&*(),.?&quot;:{}|<>]{6,16}$"
+                  title="La contraseña debe tener entre 6 y 16 caracteres e incluir al menos un carácter especial" required>
+                <div class="form-text text-muted-custom mt-2">
+                  Entre 6 y 16 caracteres. Debe incluir un carácter especial.
+                </div>
+              </div>
+              
+              <button class="btn btn-neon-primary w-100 py-2.5" type="submit">Ingresar</button>
+            </form>
+            
+            <p class="mt-4 text-center text-white-50 mb-0">
+              ¿No tienes cuenta? <a href="../registro/registro.html" class="neon-link">Regístrate aquí</a>
+            </p>
+          </div>
         </div>
 
-        <div class="mb-3">
-          <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" maxlength="16"
-            pattern="^(?=.*[!@#$%^&*(),.?&quot;:{}|<>])[A-Za-z0-9!@#$%^&*(),.?&quot;:{}|<>]{6,16}$"
-            title="La contraseña debe tener entre 6 y 16 caracteres e incluir al menos un carácter especial (Ej: @, $, !, %, *, ?, &)"
-            required>
-          <small class="muted d-block">
-            Entre 6 y 16 caracteres. Debe incluir un carácter especial.
-          </small>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Ingresar</button>
-      </form>
-
-      <p class="muted">
-        ¿No tienes cuenta? <a href="../registro/registro.html">Regístrate aquí</a>
-      </p>
+      </div>
     </div>
-
   </main>
 
   <footer class="bg-dark text-light">
     <div class="container py-4">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Cartelera</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/cartelera/santo-domingo/sto-domingo/222#" class="text-muted">Próximos Estrenos</a></li>
-            <li><a href="https://www.supercines.com/quienes-somos" class="text-muted">Quiénes Somos</a></li>
-            <li><a href="https://www.supercines.com/donde-estamos" class="text-muted">Dónde Estamos</a></li>
+            <li><a href="#" class="text-muted">Próximos Estrenos</a></li>
+            <li><a href="#" class="text-muted">Quiénes Somos</a></li>
+            <li><a href="#" class="text-muted">Dónde Estamos</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Supercines</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/terminos-y-condiciones" class="text-muted">Términos y Condiciones</a></li>
-            <li><a href="https://www.supercines.com/politica-de-privacidad" class="text-muted">Políticas de privacidad</a></li>
-            <li><a href="https://www.supercines.com/politica-cookies" class="text-muted">Políticas de cookies</a></li>
-            <li><a href="https://www.supercines.com/cumpleanios" class="text-muted">Cumpleaños</a></li>
-            <li><a href="https://www.supercines.com/servicios-publicitarios" class="text-muted">Servicios Publicitarios</a></li>
+            <li><a href="#" class="text-muted">Términos</a></li>
+            <li><a href="#" class="text-muted">Privacidad</a></li>
+            <li><a href="#" class="text-muted">Cookies</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Contáctanos</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.chullacine.com/escribenos" class="text-muted">Escríbenos</a></li>
-            <li><a href="https://chullacine.com/" class="text-muted">Trabaja con Nosotros</a></li>
-            <li><a href="https://www.e-chullacine.com/" class="text-muted">Facturación Electrónica</a></li>
+            <li><a href="#" class="text-muted">Escríbenos</a></li>
+            <li><a href="#" class="text-muted">Trabaja con Nosotros</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Síguenos</h5>
           <div class="social-links mb-3">
-            <a href="https://x.com/#!/chullacine1" target="_blank" class="text-light"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/chullacine" target="_blank" class="text-light"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/chullacine/" target="_blank" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
           </div>
-          <h6 class="mt-2">Call Center</h6>
-          <p class="mb-0">1-800-626262</p>
-          <p class="mb-0">Horario: 10h00 - 21h00</p>
-          <p class="mt-2"><a href="../about/about.html" class="text-muted">Más sobre ChullaCine</a></p>
+          <h6>Call Center</h6>
+          <p class="mb-0 small">1-800-626262</p>
+          <p class="small">10h00 - 21h00</p>
         </div>
       </div>
       <div class="text-center mt-3 small text-muted">© 2026 ChullaCine — Proyecto de práctica</div>

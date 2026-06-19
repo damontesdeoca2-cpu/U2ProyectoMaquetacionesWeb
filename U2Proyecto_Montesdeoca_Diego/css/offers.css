@@ -1,26 +1,37 @@
 /* ============================================================
-   BLOQUE 1: OFERTAS DESTACADAS CON FLEXBOX
+   BLOQUE 1: ESTRUCTURA GENERAL Y TARJETAS
 ============================================================ */
-#ofertas-destacadas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin: 2rem 0;
+.page-title {
+  font-weight: 700;
+  border-bottom: 2px solid rgba(177, 59, 255, 0.2);
+  padding-bottom: 0.5rem;
 }
 
-#ofertas-destacadas .card {
-  flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease;
+/* Forzar estilos oscuros en tarjetas integrando la personalización requerida */
+.card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
 }
 
-#ofertas-destacadas .card:hover {
-  transform: translateY(-5px);
+/* Efecto hover personalizado */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(177, 59, 255, 0.15);
+  border-color: rgba(177, 59, 255, 0.3) !important;
 }
 
-#ofertas-destacadas .card img {
+/* Títulos de las ofertas estrictamente en blanco puro */
+.offer-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  margin-bottom: 0.5rem;
+}
+
+.card-offer-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -28,31 +39,78 @@
 }
 
 /* ============================================================
-   BLOQUE 2: PROGRESS BARS
+   BLOQUE 2: PROGRESS BARS (BARRAS DE PROGRESO DE BOOTSTRAP)
 ============================================================ */
-progress {
-  width: 100%;
-  height: 0.8rem;
-  border-radius: 1rem;
+.progress {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 1rem !important;
   overflow: hidden;
-  accent-color: #b13bff;
+  height: 10px;
+}
+
+.bg-purple-progress {
+  background-color: #b13bff !important;
+  background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent) !important;
+  background-size: 1rem 1rem !important;
 }
 
 /* ============================================================
-   BLOQUE 3: TABLA DE AVANCE
+   BLOQUE 3: TABLA DE AVANCE PERSONALIZADA
 ============================================================ */
-#tabla-avance {
-  margin-top: 2rem;
-  overflow-x: auto;
+.text-purple {
+  color: #d69cff !important;
 }
 
-.tabla-datos {
-  width: 100%;
-  border-collapse: collapse;
+.table {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  margin-bottom: 0;
 }
 
-.tabla-datos th, .tabla-datos td {
-  padding: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  text-align: left;
+.table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Badges de estado customizados */
+.bg-custom-success {
+  background-color: rgba(40, 167, 69, 0.2) !important;
+  color: #28a745 !important;
+  border: 1px solid rgba(40, 167, 69, 0.4);
+}
+
+.bg-custom-warning {
+  background-color: rgba(255, 193, 7, 0.15) !important;
+  color: #ffca28 !important;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.bg-custom-danger {
+  background-color: rgba(220, 53, 69, 0.2) !important;
+  color: #dc3545 !important;
+  border: 1px solid rgba(220, 53, 69, 0.4);
+}
+
+/* ============================================================
+   BLOQUE 4: BOTONES & ACCIONES
+============================================================ */
+.btn-primary {
+  background: #b13bff !important;
+  border-color: #b13bff !important;
+  border-radius: 2rem !important;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #9322e0 !important;
+  border-color: #9322e0 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(177, 59, 255, 0.35);
+}
+
+.search::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
 }

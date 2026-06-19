@@ -17,7 +17,7 @@
 }
 
 /* ============================================================
-   BLOQUE 1: CONFIGURACIÓN GENERAL
+   BLOQUE 1: CONFIGURACIÓN GENERAL (Optimizado Mobile-first)
 ============================================================ */
 html {
   scroll-behavior: smooth;
@@ -117,6 +117,8 @@ a:hover {
   flex-wrap: wrap;
   gap: 0.5rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-list a {
@@ -127,6 +129,7 @@ a:hover {
   color: rgba(244, 245, 255, 0.9);
   text-decoration: none;
   font-weight: 500;
+  transition: all 0.2s ease; /* Integrado del segundo CSS */
 }
 
 .nav-list a:hover,
@@ -220,11 +223,12 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 1.25rem;
   padding: 1.25rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Integrado box-shadow */
 }
 
 .card:hover {
   transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(177, 59, 255, 0.1); /* Sombra estética morada integrada */
 }
 
 .poster-thumb {
@@ -286,7 +290,7 @@ tr:hover {
 }
 
 /* ============================================================
-   BLOQUE 9: FOOTER (CORREGIDO PARA CORRESPONDER A LA IMAGEN)
+   BLOQUE 9: FOOTER
 ============================================================ */
 footer {
   background: rgba(6, 5, 12, 0.98);
@@ -299,7 +303,7 @@ footer h5 {
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
-  color: #f4f5ff;
+  color: #ffffff;
 }
 
 footer p {
@@ -307,14 +311,12 @@ footer p {
   margin-bottom: 0.5rem;
 }
 
-/* Contenedor flexible de las redes sociales */
 .social-links {
   display: flex;
   gap: 0.6rem;
   margin-bottom: 1.25rem;
 }
 
-/* Botón circular oscuro exacto al de la captura */
 .social-links a {
   display: inline-flex;
   align-items: center;
@@ -322,7 +324,7 @@ footer p {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background-color: #14131a; /* Gris muy oscuro de la captura */
+  background-color: #14131a;
   border: 1px solid rgba(255, 255, 255, 0.03);
   color: #e6eef8;
   font-size: 0.95rem;
@@ -331,7 +333,7 @@ footer p {
 }
 
 .social-links a:hover {
-  background-color: #b13bff; /* Color de realce al pasar el mouse */
+  background-color: #b13bff;
   color: #fff !important;
   transform: translateY(-2px);
   text-decoration: none;
@@ -478,7 +480,6 @@ footer p {
   margin-bottom: 0.25rem !important;
 }
 
-/* Modificado para que los links del footer respeten el color mutado por defecto */
 .list-unstyled li {
   margin-bottom: 0.4rem;
 }
@@ -491,6 +492,41 @@ footer p {
 }
 
 .list-unstyled li a:hover {
-  color: #fff !important; /* Resalta en blanco al pasar el cursor como en sistemas premium */
+  color: #fff !important;
   text-decoration: none;
 }
+
+/* ============================================================
+   BLOQUE 12: MEDIA QUERIES (Inyección Responsiva Mobile-First)
+============================================================ */
+@media (max-width: 767px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .nav-list {
+    justify-content: center;
+  }
+  
+  .header-actions {
+    justify-content: center;
+  }
+  
+  .search {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .brand {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .brand {
+    font-size: 2rem;
+  }
+}
+

@@ -1,62 +1,101 @@
-/* ===== BLOQUE 1: HEADER Y NAVEGACIÓN ===== */
-/* ===== BLOQUE 2: SECCIÓN PRINCIPAL ===== */
-/* ===== BLOQUE 3: FLEXBOX ===== */
-/* ===== BLOQUE 4: GRID ===== */
-/* ===== BLOQUE 5: FOOTER ===== */
-
-/* Página Iniciar Sesión */
+/* ============================================================
+   BLOQUE 1: ESTRUCTURA PRINCIPAL Y CONTENEDOR
+============================================================ */
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 200px);
 }
 
-main .card {
-  max-width: 520px;
-  margin: 2rem auto;
-  padding: 2rem;
+.min-vh-75 {
+  min-height: 70vh;
 }
 
-main form {
-  display: grid;
-  gap: 1rem;
+/* Textos auxiliares */
+.text-muted-custom {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.825rem;
 }
 
-main form div {
-  display: grid;
-  gap: 0.5rem;
+.neon-link {
+  color: #b13bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-main button {
-  width: 100%;
-}
-
-/* ============================================================
-   BLOQUE 1: TARJETA DE LOGIN
-============================================================ */
-#login-card {
-  max-width: 520px;
-  margin: 2rem auto;
+.neon-link:hover {
+  color: #cc8fff;
+  text-decoration: underline;
 }
 
 /* ============================================================
-   BLOQUE 2: FORMULARIO
+   BLOQUE 2: PERSONALIZACIÓN DE CARD (Punto 8)
 ============================================================ */
-.formulario {
-  display: grid;
-  gap: 0.8rem;
+.custom-card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-.formulario .campo {
-  display: grid;
-  gap: 0.4rem;
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(177, 59, 255, 0.15) !important;
 }
 
-.btn-primario {
-  background: #2b7cff;
-  color: #fff;
-  border: none;
-  padding: 0.7rem;
-  border-radius: 6px;
+/* ============================================================
+   BLOQUE 3: PERSONALIZACIÓN DE FORM CONTROLS (Punto 8)
+============================================================ */
+.custom-input {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem 1rem !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+/* Modificación del placeholder nativo */
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Estado de enfoque sin el resplandor azul clásico de Bootstrap */
+.custom-input:focus {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border-color: #b13bff !important;
+  box-shadow: 0 0 0 3px rgba(177, 59, 255, 0.25) !important;
+}
+
+/* ============================================================
+   BLOQUE 4: PERSONALIZACIÓN DE ALERT (Punto 8)
+============================================================ */
+.alert-custom {
+  background-color: rgba(177, 59, 255, 0.1) !important;
+  border: 1px solid rgba(177, 59, 255, 0.25) !important;
+  color: #dfbfff !important;
+  border-radius: 0.75rem !important;
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem !important;
+}
+
+/* ============================================================
+   BLOQUE 5: PERSONALIZACIÓN DE BOTONES (Punto 8)
+============================================================ */
+.btn-neon-primary {
+  background: #b13bff !important;
+  border: 1px solid #b13bff !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 0.75rem !important;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease !important;
+}
+
+.btn-neon-primary:hover {
+  background: #be54ff !important;
+  border-color: #be54ff !important;
+  box-shadow: 0 0 15px rgba(177, 59, 255, 0.4) !important;
+}
+
+.btn-neon-primary:active {
+  transform: scale(0.98);
 }

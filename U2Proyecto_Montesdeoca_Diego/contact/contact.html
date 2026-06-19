@@ -7,7 +7,7 @@
   <title>Contacto — ChullaCine</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/general.css">
-  <link rel="stylesheet" href="../css/contacto.css">
+  <link rel="stylesheet" href="../css/contact.css">
   <link rel="icon" href="../images/gafas-3d.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -16,7 +16,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="../index.html">ChullaCine</a>
-      <nav>
+      <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse d-md-block" id="navMenu">
         <ul class="nav-list">
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="../services/services.html">Cartelera</a></li>
@@ -26,118 +29,158 @@
           <li><a href="../contact/contact.html" class="active">Contacto</a></li>
         </ul>
       </nav>
-      <form action="contact.html" method="get" class="formulario">
+      <form action="../contact/contact.html" method="get" class="formulario d-none d-md-flex">
         <div class="header-actions">
-          <label for="search"><button class="button small" type="submit">Enviar</button></label>
-          <input class="search" type="search" placeholder="Ingrese que quiere buscar..." id="buscar" name="buscar">
+          <input class="search" type="search" placeholder="Buscar..." id="buscar" name="buscar">
+          <button class="button small" type="submit">Buscar</button>
           <a class="button small" href="../sesion/sesion.html">Iniciar sesión</a>
         </div>
       </form>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container my-5">
     <h1>Contacto</h1>
     <p class="muted">Escríbenos, te responderemos pronto.</p>
 
+    <div class="alert alert-info bg-dark text-light border-secondary mb-4 small d-flex align-items-center" role="alert">
+      <i class="fas fa-info-circle me-2 text-info"></i>
+      <div>
+        ¿Quieres reservar para eventos privados? Escríbenos detallando la fecha y cantidad de butacas requeridas.
+      </div>
+    </div>
+
     <div class="row g-4">
-      <div class="col-md-6">
-        <div id="formulario-contacto">
-          <form method="get" action="contact.html" class="card p-3 formulario">
-            <div class="mb-3">
-              <label class="form-label">Nombre</label>
-              <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Correo</label>
-              <input type="email" class="form-control" name="email" placeholder="correo@ejemplo.com" required>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Película de interés</label>
-              <input type="text" class="form-control" name="pelicula" placeholder="¿Qué quieres ver?">
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Mensaje</label>
-              <textarea rows="4" class="form-control" name="mensaje" placeholder="Déjanos tu mensaje" required></textarea>
-            </div>
-
-            <div>
-              <button class="btn btn-primary" type="submit" data-bs-toggle="button">
-                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                Enviar consulta
-              </button>
-            </div>
-          </form>
+      <div class="col-12 col-md-6">
+        <div id="formulario-contacto" class="card h-100">
+          <div class="card-body p-4">
+            <h3 class="mb-4">Escríbenos</h3>
+            <form method="get" action="../contact/contact.html">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Nombre</label>
+                <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Correo</label>
+                <input type="email" class="form-control" name="email" placeholder="correo@ejemplo.com" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Película de interés</label>
+                <input type="text" class="form-control" name="pelicula" placeholder="¿Qué quieres ver?">
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Mensaje</label>
+                <textarea rows="4" class="form-control" name="mensaje" placeholder="Déjanos tu mensaje" required></textarea>
+              </div>
+              <div class="text-end">
+                <button class="btn btn-primary w-100 mt-2" type="submit">Enviar consulta</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div id="mapa-ubicacion" class="card p-3">
-          <h3>Horarios</h3>
-          <table class="tabla-datos w-100">
-            <tr>
-              <td>Neon Genesis</td>
-              <td class="muted">16:00 • 19:30 • 22:00</td>
-            </tr>
-            <tr>
-              <td>Love & Lights</td>
-              <td class="muted">14:45 • 18:00</td>
-            </tr>
-            <tr>
-              <td>Family Tales</td>
-              <td class="muted">11:00 • 13:30</td>
-            </tr>
-          </table>
-          <iframe class="w-100 mt-3" src="https://www.google.com/maps/place/Santo+Domingo+de+los+Ts%C3%A1chilas/@-0.3409951,-79.4770053,10z/data=!3m1!4b1!4m6!3m5!1s0x91d548f5313d0c21:0x9299edec397be292!8m2!3d-0.2521882!4d-79.1879383!16s%2Fm%2F03ccmf3?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D" height="350" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <p class="muted mt-2">📍 Av. Cinematográfica 123</p>
+      <div class="col-12 col-md-6">
+        <div id="mapa-ubicacion" class="card mb-4">
+          <div class="card-body p-4">
+            <h3 class="mb-3">Horarios de Funciones</h3>
+            <div class="table-responsive">
+              <table class="table table-dark table-striped table-hover align-middle">
+                <thead>
+                  <tr>
+                    <th>Película</th>
+                    <th>Horarios disponibles</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-semibold">Neon Genesis</td>
+                    <td><span class="badge bg-secondary">16:00</span> • <span class="badge bg-secondary">19:30</span> • <span class="badge bg-secondary">22:00</span></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold">Love & Lights</td>
+                    <td><span class="badge bg-secondary">14:45</span> • <span class="badge bg-secondary">18:00</span></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold">Family Tales</td>
+                    <td><span class="badge bg-secondary">11:00</span> • <span class="badge bg-secondary">13:30</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <iframe class="w-100 mt-4" src="https://maps.google.com/maps?q=Santo%20Domingo,%20Ecuador&t=&z=14&ie=UTF-8&iwloc=&output=embed" height="220" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="muted mt-2 mb-0"><i class="fas fa-map-marker-alt text-danger me-1"></i> Av. Cinematográfica 123</p>
+          </div>
         </div>
+
+        <div class="accordion accordion-flush rounded-3 overflow-hidden" id="faqAccordion">
+          <div class="accordion-item bg-dark text-light border-secondary">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                ¿Con cuánta anticipación debo llegar?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body muted small">
+                Te sugerimos llegar al menos 15 minutos antes de la hora programada para que alcances a retirar tus snacks sin perderte los trailers iniciales.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item bg-dark text-light border-secondary">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                ¿Tienen descuentos para estudiantes?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body muted small">
+                ¡Claro que sí! Presentando tu carnet estudiantil vigente en boletería física obtienes un 20% de descuento de lunes a jueves.
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
 
-  <footer class="bg-dark text-light">
+  <footer class="bg-dark text-light mt-5">
     <div class="container py-4">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Cartelera</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/cartelera/santo-domingo/sto-domingo/222#" class="text-muted">Próximos Estrenos</a></li>
-            <li><a href="https://www.supercines.com/quienes-somos" class="text-muted">Quiénes Somos</a></li>
-            <li><a href="https://www.supercines.com/donde-estamos" class="text-muted">Dónde Estamos</a></li>
+            <li><a href="#" class="text-muted">Próximos Estrenos</a></li>
+            <li><a href="#" class="text-muted">Quiénes Somos</a></li>
+            <li><a href="#" class="text-muted">Dónde Estamos</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Supercines</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/terminos-y-condiciones" class="text-muted">Términos y Condiciones</a></li>
-            <li><a href="https://www.supercines.com/politica-de-privacidad" class="text-muted">Políticas de privacidad</a></li>
-            <li><a href="https://www.supercines.com/politica-cookies" class="text-muted">Políticas de cookies</a></li>
-            <li><a href="https://www.supercines.com/cumpleanios" class="text-muted">Cumpleaños</a></li>
-            <li><a href="https://www.supercines.com/servicios-publicitarios" class="text-muted">Servicios Publicitarios</a></li>
+            <li><a href="#" class="text-muted">Términos</a></li>
+            <li><a href="#" class="text-muted">Privacidad</a></li>
+            <li><a href="#" class="text-muted">Cookies</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Contáctanos</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.chullacine.com/escribenos" class="text-muted">Escríbenos</a></li>
-            <li><a href="https://chullacine.com/" class="text-muted">Trabaja con Nosotros</a></li>
-            <li><a href="https://www.e-chullacine.com/" class="text-muted">Facturación Electrónica</a></li>
+            <li><a href="#" class="text-muted">Escríbenos</a></li>
+            <li><a href="#" class="text-muted">Trabaja con Nosotros</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Síguenos</h5>
           <div class="social-links mb-3">
-            <a href="https://x.com/#!/chullacine1" target="_blank" class="text-light"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/chullacine" target="_blank" class="text-light"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/chullacine/" target="_blank" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
           </div>
-          <h6 class="mt-2">Call Center</h6>
-          <p class="mb-0">1-800-626262</p>
-          <p class="mb-0">Horario: 10h00 - 21h00</p>
-          <p class="mt-2"><a href="../about/about.html" class="text-muted">Más sobre ChullaCine</a></p>
+          <h6>Call Center</h6>
+          <p class="mb-0 small">1-800-626262</p>
+          <p class="small">10h00 - 21h00</p>
         </div>
       </div>
       <div class="text-center mt-3 small text-muted">© 2026 ChullaCine — Proyecto de práctica</div>
@@ -148,6 +191,3 @@
 </body>
 
 </html>
-
-
-

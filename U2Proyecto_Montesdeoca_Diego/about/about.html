@@ -15,8 +15,11 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="../index.html">CHULLACINE</a>
-      <nav aria-label="main navigation">
+      <a class="brand" href="../index.html">ChullaCine</a>
+      <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse d-md-block" id="navMenu">
         <ul class="nav-list">
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="../services/services.html">Cartelera</a></li>
@@ -26,19 +29,19 @@
           <li><a href="../contact/contact.html">Contacto</a></li>
         </ul>
       </nav>
-      <form action="about.html" method="get" class="formulario">
+      <form action="../about/about.html" method="get" class="formulario d-none d-md-flex">
         <div class="header-actions">
-          <label for="search"><button class="button small" type="submit">Enviar</button></label>
-          <input class="search" type="search" placeholder="Ingrese que quiere buscar..." id="buscar" name="buscar">
+          <input class="search" type="search" placeholder="Buscar..." id="buscar" name="buscar">
+          <button class="button small" type="submit">Buscar</button>
           <a class="button small" href="../sesion/sesion.html">Iniciar sesión</a>
         </div>
       </form>
     </div>
   </header>
 
-  <main class="container">
-    <section id="historia">
-      <h1>¿Qué es ChullaCine?</h1>
+  <main class="container py-4">
+    <section id="historia" class="mb-4">
+      <h1 class="page-title text-white">¿Qué es ChullaCine?</h1>
       <p class="muted">
         Bienvenidos a ChullaCine. Esta plataforma nació bajo una premisa simple pero ambiciosa:
         redefinir la forma en que compras tus entradas al cine. Sabemos lo frustrante que es lidiar con
@@ -47,139 +50,163 @@
       </p>
     </section>
 
-    <section id="revolucion" class="cards-grid">
-
-      <article class="card">
-        <h2>El cine convencional</h2>
-        <p class="muted">
-          En cualquier página tradicional, el proceso es un viaje largo y tedioso:
-        </p>
-        <ul>
-          <li>Entrar a la cartelera principal.</li>
-          <li>Seleccionar la película en otra ventana.</li>
-          <li>Elegir la hora en una sección diferente.</li>
-          <li>Definir la cantidad de boletos.</li>
-          <li>Avanzar a ciegas sin saber realmente qué asientos están libres.</li>
-          <li>Recién ahí, ver el mapa de la sala y proceder a pagar.</li>
-        </ul>
+    <section id="revolucion" class="row g-4 mb-4">
+      <article class="col-12 col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="section-subtitle text-white">El cine convencional</h2>
+            <p class="muted">En cualquier página tradicional, el proceso es un viaje largo y tedioso:</p>
+            <ul class="custom-list text-white-50">
+              <li>Entrar a la cartelera principal.</li>
+              <li>Seleccionar la película en otra ventana.</li>
+              <li>Elegir la hora en una sección diferente.</li>
+              <li>Definir la cantidad de boletos.</li>
+              <li>Avanzar a ciegas sin saber realmente qué asientos están libres.</li>
+              <li>Recién ahí, ver el mapa de la sala y proceder a pagar.</li>
+            </ul>
+          </div>
+        </div>
       </article>
 
-      <article class="card">
-        <h2>La Revolución ChullaCine</h2>
-        <p class="muted">
-          Elimamos las barreras. Concentramos toda la experiencia clave en una sola pantalla unificada:
-        </p>
-        <ul>
-          <li><strong>Optimización en un clic:</strong> Cambia de película directamente en el panel lateral; la
-            información, salas y horarios se actualizan al instante sin cambiar de página.</li>
-          <li><strong>Transparencia visual absoluta:</strong> El mapa de butacas está visible desde el primer momento
-            para que sepas qué disponibilidad real existe antes de tomar decisiones.</li>
-          <li><strong>Máxima eficiencia estructural:</strong> Menos clics, menos recargas de página y un control total
-            de tu orden.</li>
-        </ul>
+      <article class="col-12 col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="section-subtitle text-white">La Revolución ChullaCine</h2>
+            <p class="muted">Eliminamos las barreras. Concentramos toda la experiencia clave en una sola pantalla unificada:</p>
+            <ul class="custom-list text-white-50">
+              <li><strong>Optimización en un clic:</strong> Cambia de película directamente en el panel lateral; la información, salas y horarios se actualizan al instante sin cambiar de página.</li>
+              <li><strong>Transparencia visual absoluta:</strong> El mapa de butacas está visible desde el primer momento para que sepas qué disponibilidad real existe antes de tomar decisiones.</li>
+              <li><strong>Máxima eficiencia estructural:</strong> Menos clics, menos recargas de página y un control total de tu orden.</li>
+            </ul>
+          </div>
+        </div>
       </article>
-
     </section>
 
-    <section>
+    <section class="mb-4">
       <div class="card">
-        <h2>Beneficios exclusivos de nuestra App</h2>
-        <div>
-
-          <div>
-            <h3>⏱️ Ahorro de Tiempo</h3>
-            <p class="muted">Olvídate de pasar por 5 pantallas diferentes para reservar. Todo lo que necesitas se
-              procesa de forma directa e inmediata.</p>
+        <div class="card-body">
+          <h2 class="section-subtitle text-white">Beneficios exclusivos de nuestra App</h2>
+          <div class="row g-4 mt-1">
+            <div class="col-12 col-md-4">
+              <div class="mb-2"><span class="badge bg-purple-neon">Rendimiento</span></div>
+              <h3 class="benefit-title text-white">Ahorro de Tiempo</h3>
+              <p class="muted">Olvídate de pasar por 5 pantallas diferentes para reservar. Todo lo que necesitas se procesa de forma directa e inmediata.</p>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="mb-2"><span class="badge bg-purple-neon">Interfaz</span></div>
+              <h3 class="benefit-title text-white">Información en Vivo</h3>
+              <p class="muted">Basta de números abstractos. Mira gráficamente la distribución de la sala y escoge tus asientos favoritos de forma interactiva.</p>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="mb-2"><span class="badge bg-purple-neon">Experiencia</span></div>
+              <h3 class="benefit-title text-white">Dinamismo Total</h3>
+              <p class="muted">¿Cambiaste de opinión? El selector dinámico adapta la interfaz a la nueva película elegida sin interrumpir tu flujo de compra.</p>
+            </div>
           </div>
-
-          <div>
-            <h3>📊 Información en Vivo</h3>
-            <p class="muted">Basta de números abstractos. Mira gráficamente la distribución de la sala y escoge tus
-              asientos favoritos de forma interactiva.</p>
-          </div>
-
-          <div>
-            <h3>⚡ Dinamismo Total</h3>
-            <p class="muted">¿Cambiaste de opinión? El selector dinámico adapta la interfaz a la nueva película elegida
-              sin interrumpir tu flujo de compra.</p>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <section id="faq">
+    <section id="faq" class="mb-4">
       <div class="card">
-        <h2>Preguntas Frecuentes</h2>
-        
-        <details class="card p-3 mb-3">
-          <summary class="btn btn-link">¿Cómo compro mis boletos en una sola pantalla?</summary>
-          <div class="mt-2 muted">¡Es muy fácil! En nuestro panel unificado seleccionas la película, y automáticamente verás los horarios y el mapa de asientos disponibles al instante, sin recargar la página.</div>
-        </details>
+        <div class="card-body">
+          <h2 class="section-subtitle text-white mb-3">Preguntas Frecuentes</h2>
+          <div class="accordion accordion-custom" id="accordionFAQ">
+            
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                  ¿Cómo compro mis boletos en una sola pantalla?
+                </button>
+              </h3>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body text-white-50">
+                  ¡Es muy fácil! En nuestro panel unificado seleccionas la película, y automáticamente verás los horarios y el mapa de asientos disponibles al instante, sin recargar la página.
+                </div>
+              </div>
+            </div>
 
-        <details class="card p-3 mb-3">
-          <summary class="btn btn-link">¿Puedo cambiar de película a mitad del proceso?</summary>
-          <div class="mt-2 muted">Sí. Gracias a nuestro selector dinámico, si decides cambiar de película, toda la interfaz, salas y butacas se actualizarán de inmediato sin perder tu navegación.</div>
-        </details>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                  ¿Puedo cambiar de película a mitad del proceso?
+                </button>
+              </h3>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body text-white-50">
+                  Sí. Gracias a nuestro selector dinámico, si decides cambiar de película, toda la interfaz, salas y butacas se actualizarán de inmediato sin perder tu navegación.
+                </div>
+              </div>
+            </div>
 
-        <details class="card p-3 mb-3">
-          <summary class="btn btn-link">¿Qué métodos de pago aceptan?</summary>
-          <div class="mt-2 muted">Actualmente aceptamos todas las tarjetas de crédito y débito principales, transferencias bancarias y billeteras digitales autorizadas de forma 100% segura.</div>
-        </details>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                  ¿Qué métodos de pago aceptan?
+                </button>
+              </h3>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body text-white-50">
+                  Actualmente aceptamos todas las tarjetas de crédito y débito principales, transferencias bancarias y billeteras digitales autorizadas de forma 100% segura.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
+    <section class="mb-4">
       <article class="card">
-        <h3>Nota de desarrollo</h3>
-        <p class="muted">
-          Actualmente, ChullaCine implementa una arquitectura basada en HTML y CSS. Este diseño interactivo proyecta
-          fielmente la interfaz de alto rendimiento que planeamos entregar a los amantes del séptimo arte.
-        </p>
+        <div class="card-body">
+          <h3 class="benefit-title text-white">Nota de desarrollo</h3>
+          <p class="muted mb-0">
+            Actualmente, ChullaCine implementa una arquitectura basada en HTML y CSS. Este diseño interactivo proyecta
+            fielmente la interfaz de alto rendimiento que planeamos entregar a los amantes del séptimo arte.
+          </p>
+        </div>
       </article>
     </section>
   </main>
 
-  <footer class="bg-dark text-light">
+  <footer class="bg-dark text-light mt-5">
     <div class="container py-4">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Cartelera</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/cartelera/santo-domingo/sto-domingo/222#" class="text-muted">Próximos Estrenos</a></li>
-            <li><a href="https://www.supercines.com/quienes-somos" class="text-muted">Quiénes Somos</a></li>
-            <li><a href="https://www.supercines.com/donde-estamos" class="text-muted">Dónde Estamos</a></li>
+            <li><a href="#" class="text-muted">Próximos Estrenos</a></li>
+            <li><a href="#" class="text-muted">Quiénes Somos</a></li>
+            <li><a href="#" class="text-muted">Dónde Estamos</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Supercines</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/terminos-y-condiciones" class="text-muted">Términos y Condiciones</a></li>
-            <li><a href="https://www.supercines.com/politica-de-privacidad" class="text-muted">Políticas de privacidad</a></li>
-            <li><a href="https://www.supercines.com/politica-cookies" class="text-muted">Políticas de cookies</a></li>
-            <li><a href="https://www.supercines.com/cumpleanios" class="text-muted">Cumpleaños</a></li>
-            <li><a href="https://www.supercines.com/servicios-publicitarios" class="text-muted">Servicios Publicitarios</a></li>
+            <li><a href="#" class="text-muted">Términos</a></li>
+            <li><a href="#" class="text-muted">Privacidad</a></li>
+            <li><a href="#" class="text-muted">Cookies</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Contáctanos</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.chullacine.com/escribenos" class="text-muted">Escríbenos</a></li>
-            <li><a href="https://chullacine.com/" class="text-muted">Trabaja con Nosotros</a></li>
-            <li><a href="https://www.e-chullacine.com/" class="text-muted">Facturación Electrónica</a></li>
+            <li><a href="#" class="text-muted">Escríbenos</a></li>
+            <li><a href="#" class="text-muted">Trabaja con Nosotros</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Síguenos</h5>
           <div class="social-links mb-3">
-            <a href="https://x.com/#!/chullacine1" target="_blank" class="text-light"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/chullacine" target="_blank" class="text-light"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/chullacine/" target="_blank" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
           </div>
-          <h6 class="mt-2">Call Center</h6>
-          <p class="mb-0">1-800-626262</p>
-          <p class="mb-0">Horario: 10h00 - 21h00</p>
-          <p class="mt-2"><a href="about.html" class="text-muted">Más sobre ChullaCine</a></p>
+          <h6>Call Center</h6>
+          <p class="mb-0 small">1-800-626262</p>
+          <p class="small">10h00 - 21h00</p>
         </div>
       </div>
       <div class="text-center mt-3 small text-muted">© 2026 ChullaCine — Proyecto de práctica</div>
@@ -190,6 +217,3 @@
 </body>
 
 </html>
-
-
-

@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/index.css">
-  <link rel="icon" href="images/gafas-3d.png" type="image/x-icon">
+  <link class="favicon" rel="icon" href="images/gafas-3d.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -16,7 +16,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">ChullaCine</a>
-      <nav>
+      <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse d-md-block" id="navMenu">
         <ul class="nav-list">
           <li><a href="index.html" class="active">Inicio</a></li>
           <li><a href="services/services.html">Cartelera</a></li>
@@ -24,21 +27,21 @@
           <li><a href="offers/offers.html">Ofertas</a></li>
           <li><a href="about/about.html">Acerca</a></li>
           <li><a href="contact/contact.html">Contacto</a></li>
-          <li><a href="#redes">Redes</a></li>
         </ul>
       </nav>
-      <form action="index.html" method="get" class="formulario">
+      <form action="index.html" method="get" class="formulario d-none d-md-flex">
         <div class="header-actions">
-          <label for="buscar"><button class="button small" type="submit">Enviar</button></label>
-          <input class="search" type="search" placeholder="Ingrese que quiere buscar..." id="buscar" name="buscar">
+          <input class="search" type="search" placeholder="Buscar..." id="buscar" name="buscar">
+          <button class="button small" type="submit">Buscar</button>
           <a class="button small" href="sesion/sesion.html">Iniciar sesión</a>
         </div>
       </form>
     </div>
   </header>
 
-  <main>
+  <main class="py-4">
     <div class="container">
+      
       <div id="hero" class="hero">
         <div id="carouselHighlights" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
@@ -49,39 +52,41 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="row align-items-center">
-                <div class="col-md-6 text-white">
-                  <span class="muted">★ Recomendada</span>
-                  <h1 class="display-5">Neon Reckoning</h1>
-                  <p>En un mundo donde los recuerdos son moneda, un agente solitario debe filtrar datos que pueden desmantelar el sistema.</p>
+                <div class="col-12 col-md-6 text-white">
+                  <span class="badge bg-purple-neon mb-2">★ Recomendada</span>
+                  <h1 class="display-5 fw-bold movie-title-hero">Neon Reckoning</h1>
+                  <p>En un mundo donde los recuerdos son moneda, un agent solitario debe filtrar datos que pueden desmantelar el sistema.</p>
                   <a class="btn btn-primary me-2" href="services/services.html"><i class="fas fa-ticket-alt"></i> Reservar</a>
-                  <a class="btn btn-outline-light" href="showtime/showtime.html"><i class="fas fa-play"></i> Ver trailer</a>
+                  <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#trailerModal"><i class="fas fa-play"></i> Ver trailer</button>
                 </div>
-                <div class="col-md-6">
-                  <img src="https://cdn.pixabay.com/video/2022/12/25/144257-784302968_tiny.jpg" style="width: 100%; height: 250px; object-fit: cover;" class="d-block w-100 rounded" alt="Neon Reckoning">
+                <div class="col-12 col-md-6 mt-3 mt-md-0">
+                  <img src="https://cdn.pixabay.com/video/2022/12/25/144257-784302968_tiny.jpg" class="d-block w-100 rounded" alt="Neon Reckoning" style="height: 300px; object-fit: cover;">
                 </div>
               </div>
             </div>
             <div class="carousel-item">
               <div class="row align-items-center">
-                <div class="col-md-6 text-white">
-                  <h2 class="h1">The Void Walker</h2>
-                  <p>Una odisea espacial que explora los límites entre la realidad y el vacío.</p>
+                <div class="col-12 col-md-6 text-white">
+                  <span class="badge bg-purple-neon mb-2">★ Próximo estreno</span>
+                  <h2 class="h1 fw-bold movie-title-hero">The Void Walker</h2>
+                  <p>Una odisea espacial que explora los límites entre la realidad y el vacío absoluto del cosmos.</p>
                   <a class="btn btn-primary me-2" href="services/services.html"><i class="fas fa-ticket-alt"></i> Reservar</a>
                 </div>
-                <div class="col-md-6">
-                  <img src="https://www.hachettebookgroup.com/wp-content/uploads/2025/04/9781668649961_88e9fc.jpg" style="width: 100%; height: 250px; object-fit: cover;" class="d-block w-100 rounded" alt="The Void Walker">
+                <div class="col-12 col-md-6 mt-3 mt-md-0">
+                  <img src="https://www.hachettebookgroup.com/wp-content/uploads/2025/04/9781668649961_88e9fc.jpg" class="d-block w-100 rounded" alt="The Void Walker" style="height: 300px; object-fit: cover;">
                 </div>
               </div>
             </div>
             <div class="carousel-item">
               <div class="row align-items-center">
-                <div class="col-md-6 text-white">
-                  <h2 class="h1">Sugar Rush World</h2>
-                  <p>Una aventura colorida y frenética donde nada es lo que parece.</p>
+                <div class="col-12 col-md-6 text-white">
+                  <span class="badge bg-purple-neon mb-2">★ Familiar</span>
+                  <h2 class="h1 fw-bold movie-title-hero">Sugar Rush World</h2>
+                  <p>Una aventura colorida y frenética donde nada es lo que parece en el reino de los dulces.</p>
                   <a class="btn btn-primary me-2" href="services/services.html"><i class="fas fa-ticket-alt"></i> Reservar</a>
                 </div>
-                <div class="col-md-6">
-                  <img src="https://emmamccormickart.wordpress.com/wp-content/uploads/2014/12/sugar-rush.jpg" style="width: 100%; height: 250px; object-fit: cover;" class="d-block w-100 rounded" alt="Sugar Rush World">
+                <div class="col-12 col-md-6 mt-3 mt-md-0">
+                  <img src="https://emmamccormickart.wordpress.com/wp-content/uploads/2014/12/sugar-rush.jpg" class="d-block w-100 rounded" alt="Sugar Rush World" style="height: 300px; object-fit: cover;">
                 </div>
               </div>
             </div>
@@ -97,75 +102,151 @@
         </div>
       </div>
 
-      <section id="estrenos">
-        <h2>Próximos estrenos</h2>
-        <div class="cards-grid">
-          <div class="card">
-            <img class="poster-thumb" src="https://www.hachettebookgroup.com/wp-content/uploads/2025/04/9781668649961_88e9fc.jpg" alt="The Void Walker">
-            <h3>The Void Walker</h3>
-            <p class="muted">Sci-Fi • Acción</p>
-            <span class="muted">⭐ 9.2</span>
+      <section id="estrenos" class="mt-5">
+        <h2 class="section-title mb-4">Próximos estrenos</h2>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100">
+              <img class="card-img-top poster-thumb" src="https://www.hachettebookgroup.com/wp-content/uploads/2025/04/9781668649961_88e9fc.jpg" alt="The Void Walker">
+              <div class="card-body">
+                <h3 class="card-title-movie">The Void Walker</h3>
+                <p class="card-text text-muted">Sci-Fi • Acción</p>
+                <span class="badge bg-score">⭐ 9.2</span>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <img class="poster-thumb" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1632960117i/59117390.jpg" alt="Echoes of Silence">
-            <h3>Echoes of Silence</h3>
-            <p class="muted">Drama • Misterio</p>
-            <span class="muted">⭐ 8.5</span>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100">
+              <img class="card-img-top poster-thumb" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1632960117i/59117390.jpg" alt="Echoes of Silence">
+              <div class="card-body">
+                <h3 class="card-title-movie">Echoes of Silence</h3>
+                <p class="card-text text-muted">Drama • Misterio</p>
+                <span class="badge bg-score">⭐ 8.5</span>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <img class="poster-thumb" src="https://emmamccormickart.wordpress.com/wp-content/uploads/2014/12/sugar-rush.jpg" alt="Sugar Rush World">
-            <h3>Sugar Rush World</h3>
-            <p class="muted">Animación</p>
-            <span class="muted">⭐ 9.0</span>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100">
+              <img class="card-img-top poster-thumb" src="https://emmamccormickart.wordpress.com/wp-content/uploads/2014/12/sugar-rush.jpg" alt="Sugar Rush World">
+              <div class="card-body">
+                <h3 class="card-title-movie">Sugar Rush World</h3>
+                <p class="card-text text-muted">Animación</p>
+                <span class="badge bg-score">⭐ 9.0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="datos" class="mt-5">
+        <h2 class="section-title mb-4">Datos de la cartelera</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <div class="card h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="card-header bg-transparent border-secondary">
+                  <h5 class="card-title m-0 text-purple"><i class="font-monospace">&lt;</i> Estructura JSON <i class="font-monospace">&gt;</i></h5>
+                </div>
+                <div class="card-body">
+                  <pre class="text-light">
+{
+  "peliculas": [
+    {
+      "id": 1,
+      "titulo": "Neon Reckoning",
+      "genero": "Ciencia Ficción",
+      "duracion": "2h 45min",
+      "clasificacion": 9.8,
+      "horarios": ["14:00", "16:30", "21:45"]
+    }
+  ]
+}</pre>
+                </div>
+              </div>
+              <div class="card-body pt-0 flex-grow-0">
+                <a href="data/datos.json" class="btn btn-sm btn-outline-primary w-100" download>Descargar JSON</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="card h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="card-header bg-transparent border-secondary">
+                  <h5 class="card-title m-0 text-purple"><i class="font-monospace">&lt;</i> Estructura XML <i class="font-monospace">&gt;</i></h5>
+                </div>
+                <div class="card-body">
+                  <pre class="text-light">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;peliculas&gt;
+  &lt;pelicula&gt;
+    &lt;titulo&gt;Neon Reckoning&lt;/titulo&gt;
+    &lt;duracion&gt;2h 45min&lt;/duracion&gt;
+  &lt;/pelicula&gt;
+&lt;/peliculas&gt;</pre>
+                </div>
+              </div>
+              <div class="card-body pt-0 flex-grow-0">
+                <a href="data/datos.xml" class="btn btn-sm btn-outline-primary w-100" download>Descargar XML</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </div>
   </main>
 
-</main>
-  
-  <footer class="bg-dark text-light">
+  <div class="modal fade" id="trailerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark text-light border-secondary">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title fw-bold text-white">Trailer Oficial — Neon Reckoning</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-shadow="none" data-bs-custom-class="custom-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/fzW5YvU_fKU" title="Trailer" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light mt-5">
     <div class="container py-4">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Cartelera</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/cartelera/santo-domingo/sto-domingo/222#" class="text-muted">Próximos Estrenos</a></li>
-            <li><a href="https://www.supercines.com/quienes-somos" class="text-muted">Quiénes Somos</a></li>
-            <li><a href="https://www.supercines.com/donde-estamos" class="text-muted">Dónde Estamos</a></li>
+            <li><a href="#" class="text-muted">Próximos Estrenos</a></li>
+            <li><a href="#" class="text-muted">Quiénes Somos</a></li>
+            <li><a href="#" class="text-muted">Dónde Estamos</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Supercines</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/terminos-y-condiciones" class="text-muted">Términos y Condiciones</a></li>
-            <li><a href="https://www.supercines.com/politica-de-privacidad" class="text-muted">Políticas de privacidad</a></li>
-            <li><a href="https://www.supercines.com/politica-cookies" class="text-muted">Políticas de cookies</a></li>
-            <li><a href="https://www.supercines.com/cumpleanios" class="text-muted">Cumpleaños</a></li>
-            <li><a href="https://www.supercines.com/servicios-publicitarios" class="text-muted">Servicios Publicitarios</a></li>
+            <li><a href="#" class="text-muted">Términos</a></li>
+            <li><a href="#" class="text-muted">Privacidad</a></li>
+            <li><a href="#" class="text-muted">Cookies</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Contáctanos</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.chullacine.com/escribenos" class="text-muted">Escríbenos</a></li>
-            <li><a href="https://chullacine.com/" class="text-muted">Trabaja con Nosotros</a></li>
-            <li><a href="https://www.e-chullacine.com/" class="text-muted">Facturación Electrónica</a></li>
+            <li><a href="#" class="text-muted">Escríbenos</a></li>
+            <li><a href="#" class="text-muted">Trabaja con Nosotros</a></li>
           </ul>
         </div>
-       
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Síguenos</h5>
           <div class="social-links mb-3">
-            <a href="https://x.com/#!/chullacine1" target="_blank" class="text-light"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/chullacine" target="_blank" class="text-light"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/chullacine/" target="_blank" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
           </div>
-          <h6 class="mt-2">Call Center</h6>
-          <p class="mb-0">1-800-626262</p>
-          <p class="mb-0">Horario: 10h00 - 21h00</p>
-          <p class="mt-2"><a href="about/about.html" class="text-muted">Más sobre ChullaCine</a></p>
+          <h5>Call Center</h5>
+          <p class="mb-0 small">1-800-626262</p>
+          <p class="small">10h00 - 21h00</p>
         </div>
       </div>
       <div class="text-center mt-3 small text-muted">© 2026 ChullaCine — Proyecto de práctica</div>
@@ -176,5 +257,3 @@
 </body>
 
 </html>
-
-

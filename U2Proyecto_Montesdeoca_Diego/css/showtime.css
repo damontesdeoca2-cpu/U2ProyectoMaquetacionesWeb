@@ -1,35 +1,126 @@
 /* ============================================================
-   BLOQUE 1: SELECTOR DE FUNCIÓN
+   BLOQUE 1: ESTRUCTURA, TEXTOS Y TARJETAS
 ============================================================ */
-#selector-funcion {
-  display: grid;
-  gap: 1.5rem;
+.page-title {
+  font-weight: 700;
+  border-bottom: 2px solid rgba(177, 59, 255, 0.2);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Forzar Título de Película en Blanco Puro */
+.movie-title-showtime {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff !important;
+}
+
+.movie-details {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Tarjetas con la estética oscura del proyecto */
+.card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  #selector-funcion .col-md-4 > .card {
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+  }
 }
 
 /* ============================================================
-   BLOQUE 2: MAPA DE BUTACAS CON GRID
+   BLOQUE 2: ALERTAS Y BADGES PERSONALIZADOS (BOOTSTRAP)
 ============================================================ */
+.alert-custom {
+  background-color: rgba(177, 59, 255, 0.15) !important;
+  border: 1px solid rgba(177, 59, 255, 0.35) !important;
+  color: #e5c2ff !important;
+  border-radius: 1rem !important;
+}
+
+.bg-purple-neon {
+  background-color: rgba(177, 59, 255, 0.2) !important;
+  color: #d69cff !important;
+  border: 1px solid rgba(177, 59, 255, 0.4);
+}
+
+.bg-score {
+  background-color: rgba(255, 193, 7, 0.15) !important;
+  color: #ffca28 !important;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.bg-outline-custom {
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   BLOQUE 3: FORM CONTROLS (INPUTS Y SELECTS DE BOOTSTRAP)
+============================================================ */
+.form-select, .form-control {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border-radius: 0.75rem !important;
+}
+
+.form-select:focus, .form-control:focus {
+  border-color: #b13bff !important;
+  box-shadow: 0 0 0 0.25rem rgba(177, 59, 255, 0.25) !important;
+}
+
+.form-select option {
+  background-color: #12121e !important;
+  color: #fff;
+}
+
+/* ============================================================
+   BLOQUE 4: MAPA DE BUTACAS (Grid Mobile-First)
+============================================================ */
+.screen-text {
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .seat-map {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 0.6rem;
-  margin: 1.5rem 0;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.8rem 0.4rem;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  justify-items: center;
+  align-items: center;
 }
 
 label.seat {
   background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.6rem;
-  aspect-ratio: 1;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  margin-bottom: 0.1rem;
 }
 
 label.seat:hover {
-  background: rgba(177, 59, 255, 0.5);
-  transform: scale(1.05);
+  background: rgba(177, 59, 255, 0.4);
+  border-color: #b13bff;
+  transform: scale(1.1);
 }
 
 input[type="checkbox"] {
@@ -39,64 +130,82 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked + label.seat {
   background: linear-gradient(135deg, #bc7cff, #5f69ff);
   border: 1px solid #8c6eff;
+  box-shadow: 0 0 10px rgba(140, 110, 255, 0.5);
 }
 
 .seat-map span {
   display: block;
   text-align: center;
-  font-size: 0.7rem;
-  color: rgba(244, 245, 255, 0.7);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(244, 245, 255, 0.4);
+  margin-bottom: 0.5rem;
 }
 
-/* ============================================================
-   BLOQUE 3: LEYENDA CON FLEXBOX
-============================================================ */
-.legend {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 1rem 0;
-  color: rgba(244, 245, 255, 0.7);
-}
-
-.legend .box {
+.box {
   width: 16px;
   height: 16px;
   display: inline-block;
   border-radius: 4px;
-  margin-right: 6px;
+  margin-right: 4px;
   background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   vertical-align: middle;
 }
 
-
-/* ============================================================
-   BLOQUE 4: RESERVA
-============================================================ */
-#reserva {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  margin-top: 1.5rem;
+.selected-box {
+  background: linear-gradient(135deg, #bc7cff, #5f69ff);
+  border-color: #8c6eff;
 }
 
-.campo {
-  margin-bottom: 1rem;
-}
-
-.campo label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-/* ============================================================
-   BLOQUE 5: TARJETAS
-============================================================ */
 .poster-thumb {
   width: 100%;
   height: 250px;
   aspect-ratio: 2 / 3;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   object-fit: cover;
-  margin-bottom: 0.75rem;
+}
+
+/* ============================================================
+   BLOQUE 5: BOTONES PERSONALIZADOS
+============================================================ */
+.btn-primary {
+  background: #b13bff !important;
+  border-color: #b13bff !important;
+  border-radius: 2rem !important;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #9322e0 !important;
+  border-color: #9322e0 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(177, 59, 255, 0.4);
+}
+
+.btn-outline-custom-secondary {
+  color: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 2rem !important;
+}
+
+.btn-outline-custom-secondary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+
+/* Responsive Grid de Asientos */
+@media (min-width: 768px) {
+  .seat-map {
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem 0.5rem;
+    max-width: 550px;
+  }
+  
+  label.seat {
+    width: 36px;
+    height: 36px;
+  }
 }

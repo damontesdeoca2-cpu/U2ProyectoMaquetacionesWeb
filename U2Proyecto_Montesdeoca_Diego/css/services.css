@@ -1,65 +1,79 @@
 /* ============================================================
-   BLOQUE 1: PELÍCULA DESTACADA (Grid)
+   BLOQUE 1: PELÍCULA DESTACADA
 ============================================================ */
-#pelicula-destacada > div {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 1.5rem;
-  align-items: start;
+#pelicula-destacada {
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 2rem;
 }
 
+/* Controlamos que la imagen destacada tenga buen tamaño y no se achique */
 #pelicula-destacada img {
   width: 100%;
-  border-radius: 1.5rem;
+  height: 100%;
+  min-height: 250px;
+  max-height: 320px;
   object-fit: cover;
 }
 
 /* ============================================================
-   BLOQUE 2: GALERÍA DE OTRAS PELÍCULAS CON GRID
+   BLOQUE 2: GALERÍA DE OTRAS PELÍCULAS (Bootstrap nativo)
 ============================================================ */
-#otras-peliculas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
+/* Eliminamos el display: grid que chocaba con las columnas de Bootstrap */
 #otras-peliculas .card {
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 #otras-peliculas .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(177, 59, 255, 0.15);
 }
 
+/* Controlamos los pósters para que tengan proporciones reales de cine sin ser gigantes */
 #otras-peliculas .poster-thumb {
-  aspect-ratio: 2/3;
+  width: 100%;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
-  border-radius: 0.75rem;
-  margin-bottom: 1rem;
+}
+
+#otras-peliculas .card-body {
+  padding: 1.25rem;
+}
+
+/* Ajuste para títulos de las tarjetas */
+#otras-peliculas h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 /* ============================================================
-   BLOQUE 3: HORARIOS
+   BLOQUE 3: BOTONES Y HORARIOS
 ============================================================ */
-.times {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
+.muted {
+  color: #a0a0a0;
 }
 
-.time-btn {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.5rem 1rem;
+/* Estilo para los botones de horarios tipo pastilla */
+.btn-sm {
   border-radius: 2rem;
+  padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
-.time-btn:hover {
-  background: #b13bff;
+/* Efecto hover personalizado para mantener tu identidad visual */
+.btn-outline-light:hover {
+  background: #b13bff !important;
+  border-color: #b13bff !important;
+  color: #fff !important;
   transform: translateY(-2px);
 }

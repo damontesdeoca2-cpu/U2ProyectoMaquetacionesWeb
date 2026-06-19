@@ -16,7 +16,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="../index.html">ChullaCine</a>
-      <nav>
+      <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse d-md-block" id="navMenu">
         <ul class="nav-list">
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="../services/services.html">Cartelera</a></li>
@@ -26,115 +29,149 @@
           <li><a href="../contact/contact.html">Contacto</a></li>
         </ul>
       </nav>
-      <form action="offers.html" method="get" class="formulario">
+      <form action="../offers/offers.html" method="get" class="formulario d-none d-md-flex">
         <div class="header-actions">
-          <label for="search"><button class="button small" type="submit">Enviar</button></label>
-          <input class="search" type="search" placeholder="Ingrese que quiere buscar..." id="buscar" name="buscar">
+          <input class="search" type="search" placeholder="Buscar..." id="buscar" name="buscar">
+          <button class="button small" type="submit">Buscar</button>
           <a class="button small" href="../sesion/sesion.html">Iniciar sesión</a>
         </div>
       </form>
     </div>
   </header>
 
-  <main class="container">
-    <h1>Ofertas especiales</h1>
-    <div id="ofertas-destacadas" class="cards-grid">
-      <div class="card">
-        <h3>2x1 los martes</h3>
-        <p class="muted">Segunda entrada 50% off todos los martes</p>
-        <br>
-        <img src="https://pbs.twimg.com/tweet_video_thumb/EC_5q1NU4AIFPJb.jpg" alt="" width="300px">
-        <br>
-        <br>
-        <div>
-          <label>🔥 Ofertas reclamadas: <b>75%</b></label>
-          <progress title="75% reclamado" value="75" max="100"></progress>
-          <small class="muted">¡Quedan pocas entradas con este descuento!</small>
+  <main class="container py-4">
+    <h1 class="page-title mb-4 text-white">Ofertas especiales</h1>
+
+    <div class="row g-4" id="ofertas-destacadas">
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h3 class="offer-title">2x1 los martes</h3>
+              <p class="text-muted">Segunda entrada 50% off todos los martes</p>
+              <img src="https://pbs.twimg.com/tweet_video_thumb/EC_5q1NU4AIFPJb.jpg" class="img-fluid rounded mb-3 card-offer-img" alt="2x1">
+              
+              <div class="mb-3">
+                <label class="text-white-50 small mb-1">🔥 Ofertas reclamadas: <b class="text-white">75%</b></label>
+                <div class="progress">
+                  <div class="progress-bar bg-purple-progress" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted d-block mt-1">¡Quedan pocas entradas con este descuento!</small>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalOffer1">Ver más</button>
+          </div>
         </div>
-        <div class="text-center"><button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalOffer1">Ver más</button></div>
       </div>
-      
-      <div class="card">
-        <h3>Combo familiar</h3>
-        <p class="muted">Palomitas + 4 bebidas con descuento</p>
-        <br>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Dy5kIAD5BCuOlvBwX4I44iddCAKqLXkmXQ&s" alt=""
-          width="300px" height="300px;">
-        <br>
-        <br>
-        <div>
-          <label>🍿 Presupuesto de comida gastado:</label>
-          <progress title="45% de presupuesto gastado" value="45" max="100"></progress>
-          <small class="muted">Has gastado el 45% de tu combo</small>
+
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h3 class="offer-title">Combo familiar</h3>
+              <p class="text-muted">Palomitas + 4 bebidas con descuento</p>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Dy5kIAD5BCuOlvBwX4I44iddCAKqLXkmXQ&s" class="img-fluid rounded mb-3 card-offer-img" alt="Combo familiar">
+              
+              <div class="mb-3">
+                <label class="text-white-50 small mb-1">🍿 Presupuesto de comida gastado:</label>
+                <div class="progress">
+                  <div class="progress-bar bg-purple-progress" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted d-block mt-1">Has gastado el 45% de tu combo</small>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalOffer2">Ver más</button>
+          </div>
         </div>
-        <div class="text-center"><button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalOffer2">Ver más</button></div>
       </div>
-      
-      <div class="card">
-        <h3>Noche de estudiantes</h3>
-        <p class="muted">40% off con credencial, miércoles</p>
-        <br>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRyAGVW9dkovUTQNa9eoVnRZDnbwnUMN5gkQ&s" alt=""
-          width="300px" height="300px;">
-        <br>
-        <br>
-        <div>
-          <label>⏳ Tiempo restante de la oferta:</label>
-          <progress title="20% de tiempo restante" value="20" max="100"></progress>
-          <small class="muted">¡Termina pronto esta semana!</small>
+
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h3 class="offer-title">Noche de estudiantes</h3>
+              <p class="text-muted">40% off con credencial, miércoles</p>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRyAGVW9dkovUTQNa9eoVnRZDnbwnUMN5gkQ&s" class="img-fluid rounded mb-3 card-offer-img" alt="Estudiantes">
+              
+              <div class="mb-3">
+                <label class="text-white-50 small mb-1">⏳ Tiempo restante de la oferta:</label>
+                <div class="progress">
+                  <div class="progress-bar bg-purple-progress" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted d-block mt-1">¡Termina pronto esta semana!</small>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalOffer3">Ver más</button>
+          </div>
         </div>
-        <div class="text-center"><button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalOffer3">Ver más</button></div>
       </div>
     </div>
 
-    <div id="tabla-avance" class="card">
-      <h3>Resumen y Estado de Avance</h3>
-      <table class="tabla-datos">
-          <thead>
-              </thead>
-            <tr>
-              <td>Combo familiar</td>
-              <td class="muted">45% Consumido</td>
-              <td>
-                <progress title="45% de presupuesto gastado" value="45" max="100"></progress>
-              </td>
-            </tr>
-          <tr>
-            <td>Combo familiar</td>
-            <td class="muted">45% Consumido</td>
-            <td>
-              <progress title="45% de presupuesto gastado" value="45" max="100"></progress>
-            </td>
-          </tr>
-          <tr>
-            <td>Noche de estudiantes</td>
-            <td class="muted">20% Tiempo restante</td>
-            <td>
-              <progress title="20% de tiempo restante" value="20" max="100"></progress>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div id="tabla-avance" class="card mt-5">
+      <div class="card-body">
+        <h3 class="offer-title mb-4">Resumen y Estado de Avance</h3>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped align-middle border-secondary">
+            <thead>
+              <tr class="text-purple">
+                <th>Oferta</th>
+                <th>Progreso</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-white fw-semibold">2x1 los martes</td>
+                <td>
+                  <div class="progress" style="height: 18px;">
+                    <div class="progress-bar bg-purple-progress" role="progressbar" style="width: 75%">75%</div>
+                  </div>
+                </td>
+                <td><span class="badge bg-custom-success">Activa</span></td>
+              </tr>
+              <tr>
+                <td class="text-white fw-semibold">Combo familiar</td>
+                <td>
+                  <div class="progress" style="height: 18px;">
+                    <div class="progress-bar bg-purple-progress" role="progressbar" style="width: 45%">45%</div>
+                  </div>
+                </td>
+                <td><span class="badge bg-custom-warning text-dark">Consumido</span></td>
+              </tr>
+              <tr>
+                <td class="text-white fw-semibold">Noche de estudiantes</td>
+                <td>
+                  <div class="progress" style="height: 18px;">
+                    <div class="progress-bar bg-purple-progress" role="progressbar" style="width: 20%">20%</div>
+                  </div>
+                </td>
+                <td><span class="badge bg-custom-danger">Por terminar</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
-    <iframe src="https://www.google.com/maps/place/Santo+Domingo+de+los+Ts%C3%A1chilas/@-0.3409951,-79.4770053,10z/data=!3m1!4b1!4m6!3m5!1s0x91d548f5313d0c21:0x9299edec397be292!8m2!3d-0.2521882!4d-79.1879383!16s%2Fm%2F03ccmf3?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <p class="muted">📍 Av. Cinematográfica 123</p>
+    <div class="mt-5">
+      <iframe class="w-100 mt-4" src="https://maps.google.com/maps?q=Santo%20Domingo,%20Ecuador&t=&z=14&ie=UTF-8&iwloc=&output=embed" height="220" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="text-muted mt-2"><i class="fas fa-map-marker-alt text-purple me-1"></i> Av. Cinematográfica 123</p>
+    </div>
   </main>
 
-  <!-- Modals de Ofertas -->
   <div class="modal fade" id="modalOffer1" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">2x1 los martes</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content bg-dark text-light border-secondary">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title text-white fw-bold">2x1 los martes</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          Segunda entrada al 50% todos los martes. Válido para funciones seleccionadas. Presenta tu entrada en taquilla.
+        <div class="modal-body text-white-50">
+          Segunda entrada al 50% todos los martes. Válido para funciones seleccionadas. Presenta tu entrada en taquilla física o actívalo en tu reserva digital.
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a class="btn btn-primary" href="../services/services.html">Reservar ahora</a>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal">Cerrar</button>
+          <a class="btn btn-primary btn-sm" href="../services/services.html">Reservar ahora</a>
         </div>
       </div>
     </div>
@@ -142,17 +179,17 @@
 
   <div class="modal fade" id="modalOffer2" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Combo familiar</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content bg-dark text-light border-secondary">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title text-white fw-bold">Combo familiar</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          Palomitas grandes + 4 bebidas con un descuento especial. Ideal para familias y grupos.
+        <div class="modal-body text-white-50">
+          Palomitas grandes + 4 bebidas con un descuento especial del 25% incluido. Ideal para disfrutar en familia o con tu grupo de amigos.
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a class="btn btn-primary" href="#">Ver condiciones</a>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal">Cerrar</button>
+          <a class="btn btn-primary btn-sm" href="../services/services.html">Ver condiciones</a>
         </div>
       </div>
     </div>
@@ -160,71 +197,65 @@
 
   <div class="modal fade" id="modalOffer3" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Noche de estudiantes</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content bg-dark text-light border-secondary">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title text-white fw-bold">Noche de estudiantes</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          40% de descuento con credencial válida. Oferta disponible los miércoles en funciones seleccionadas.
+        <div class="modal-body text-white-50">
+          40% de descuento directo en boletería presentando tu credencial de estudiante vigente. Oferta válida únicamente los días miércoles.
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a class="btn btn-primary" href="#">Aprovechar oferta</a>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal">Cerrar</button>
+          <a class="btn btn-primary btn-sm" href="../services/services.html">Aprovechar oferta</a>
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="bg-dark text-light">
+  <footer class="bg-dark text-light mt-5">
     <div class="container py-4">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Cartelera</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/cartelera/santo-domingo/sto-domingo/222#" class="text-muted">Próximos Estrenos</a></li>
-            <li><a href="https://www.supercines.com/quienes-somos" class="text-muted">Quiénes Somos</a></li>
-            <li><a href="https://www.supercines.com/donde-estamos" class="text-muted">Dónde Estamos</a></li>
+            <li><a href="#" class="text-muted">Próximos Estrenos</a></li>
+            <li><a href="#" class="text-muted">Quiénes Somos</a></li>
+            <li><a href="#" class="text-muted">Dónde Estamos</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Supercines</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.supercines.com/terminos-y-condiciones" class="text-muted">Términos y Condiciones</a></li>
-            <li><a href="https://www.supercines.com/politica-de-privacidad" class="text-muted">Políticas de privacidad</a></li>
-            <li><a href="https://www.supercines.com/politica-cookies" class="text-muted">Políticas de cookies</a></li>
-            <li><a href="https://www.supercines.com/cumpleanios" class="text-muted">Cumpleaños</a></li>
-            <li><a href="https://www.supercines.com/servicios-publicitarios" class="text-muted">Servicios Publicitarios</a></li>
+            <li><a href="#" class="text-muted">Términos</a></li>
+            <li><a href="#" class="text-muted">Privacidad</a></li>
+            <li><a href="#" class="text-muted">Cookies</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Contáctanos</h5>
           <ul class="list-unstyled">
-            <li><a href="https://www.chullacine.com/escribenos" class="text-muted">Escríbenos</a></li>
-            <li><a href="https://chullacine.com/" class="text-muted">Trabaja con Nosotros</a></li>
-            <li><a href="https://www.e-chullacine.com/" class="text-muted">Facturación Electrónica</a></li>
+            <li><a href="#" class="text-muted">Escríbenos</a></li>
+            <li><a href="#" class="text-muted">Trabaja con Nosotros</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
           <h5>Síguenos</h5>
           <div class="social-links mb-3">
-            <a href="https://x.com/#!/chullacine1" target="_blank" class="text-light"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/chullacine" target="_blank" class="text-light"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/chullacine/" target="_blank" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
           </div>
-          <h6 class="mt-2">Call Center</h6>
-          <p class="mb-0">1-800-626262</p>
-          <p class="mb-0">Horario: 10h00 - 21h00</p>
-          <p class="mt-2"><a href="../about/about.html" class="text-muted">Más sobre ChullaCine</a></p>
+          <h6>Call Center</h6>
+          <p class="mb-0 small">1-800-626262</p>
+          <p class="small">10h00 - 21h00</p>
         </div>
       </div>
       <div class="text-center mt-3 small text-muted">© 2026 ChullaCine — Proyecto de práctica</div>
     </div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
-
-
-

@@ -1,0 +1,60 @@
+{
+  "peliculas": [
+    {
+      "id": 1,
+      "titulo": "Neon Reckoning",
+      "genero": "Ciencia Ficción",
+      "duracion": "2h 45min",
+      "clasificacion": 9.8,
+      "sinopsis": "En un mundo donde los recuerdos son moneda, un agente solitario debe filtrar datos que pueden desmantelar el sistema.",
+      "horarios": ["14:00", "16:30", "21:45"],
+      "sala": "IMAX",
+      "imagen": "https://cdn.pixabay.com/video/2022/12/25/144257-784302968_tiny.jpg"
+    },
+    {
+      "id": 2,
+      "titulo": "The Void Walker",
+      "genero": "Sci-Fi",
+      "duracion": "2h 20min",
+      "clasificacion": 9.2,
+      "sinopsis": "Una odisea espacial que explora los límites entre la realidad y el vacío.",
+      "horarios": ["15:00", "18:30"],
+      "sala": "4K HDR",
+      "imagen": "https://www.hachettebookgroup.com/wp-content/uploads/2025/04/9781668649961_88e9fc.jpg"
+    },
+    {
+      "id": 3,
+      "titulo": "Sugar Rush World",
+      "genero": "Animación",
+      "duracion": "1h 45min",
+      "clasificacion": 9.0,
+      "sinopsis": "Una aventura colorida y frenética donde nada es lo que parece.",
+      "horarios": ["11:00", "13:30"],
+      "sala": "2D",
+      "imagen": "https://emmamccormickart.wordpress.com/wp-content/uploads/2014/12/sugar-rush.jpg"
+    }
+  ],
+  "ofertas": [
+    {
+      "id": 1,
+      "nombre": "2x1 los martes",
+      "descripcion": "Segunda entrada 50% off todos los martes",
+      "progreso": 75,
+      "estado": "activa"
+    },
+    {
+      "id": 2,
+      "nombre": "Combo familiar",
+      "descripcion": "Palomitas + 4 bebidas con descuento",
+      "progreso": 45,
+      "estado": "consumido"
+    },
+    {
+      "id": 3,
+      "nombre": "Noche de estudiantes",
+      "descripcion": "40% off con credencial, miércoles",
+      "progreso": 20,
+      "estado": "por terminar"
+    }
+  ]
+}

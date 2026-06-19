@@ -1,0 +1,156 @@
+/* ============================================================
+   BLOQUE 1: CARRUSEL & HERO
+============================================================ */
+#hero {
+  margin-bottom: 2.5rem;
+}
+
+.carousel-item {
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.carousel-item .row {
+  background: rgba(15, 15, 23, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Títulos con degradado neón */
+.text-gradient {
+  background: linear-gradient(45deg, #ffffff, #b13bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================================
+   BLOQUE 2: COMPONENTES PERSONALIZADOS (Bootstrap Modificado)
+============================================================ */
+
+/* Badges de Identidad */
+.bg-purple-neon {
+  background-color: rgba(177, 59, 255, 0.2) !important;
+  color: #d69cff !important;
+  border: 1px solid rgba(177, 59, 255, 0.4);
+  padding: 0.4rem 0.75rem;
+  border-radius: 2rem;
+}
+
+.bg-score {
+  background-color: rgba(255, 193, 7, 0.15) !important;
+  color: #ffca28 !important;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  padding: 0.3rem 0.6rem;
+  width: fit-content;
+}
+
+/* Tarjetas (Cards) de Estrenos y Datos */
+.card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+/* Estado :hover de las tarjetas requerido por la guía */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(177, 59, 255, 0.15);
+  border-color: rgba(177, 59, 255, 0.3) !important;
+}
+
+.poster-thumb {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+/* Botones (Buttons) Estilo Pastilla Neón */
+.btn-primary {
+  background: #b13bff !important;
+  border-color: #b13bff !important;
+  border-radius: 2rem !important;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #9322e0 !important;
+  border-color: #9322e0 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(177, 59, 255, 0.4);
+}
+
+.btn-outline-primary {
+  color: #b13bff !important;
+  border-color: #b13bff !important;
+  border-radius: 2rem !important;
+}
+
+.btn-outline-primary:hover {
+  background: #b13bff !important;
+  color: #fff !important;
+}
+
+/* Ajuste de Placeholders Claros para el Buscador del Header */
+.search::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
+  opacity: 1;
+}
+
+/* ============================================================
+   BLOQUE 3: CÓDIGO Y ESTRUCTURAS DE DATOS
+============================================================ */
+#datos pre {
+  background: rgba(0, 0, 0, 0.4) !important;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.text-purple {
+  color: #d69cff;
+}
+
+.section-title {
+  font-weight: 700;
+  position: relative;
+  padding-left: 15px;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 4px;
+  background: #b13bff;
+  border-radius: 2px;
+}
+
+.h2-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ============================================================
+   BLOQUE 4: MEDIA QUERIES (Responsividad Completa)
+============================================================ */
+@media (max-width: 575px) {
+  .carousel-item .row {
+    padding: 1.5rem 1rem;
+  }
+  
+  .carousel-item h1 {
+    font-size: 1.75rem;
+  }
+}

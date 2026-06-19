@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chullacine>
+  <peliculas>
+    <pelicula>
+      <id>1</id>
+      <titulo>Neon Reckoning</titulo>
+      <genero>Ciencia Ficción</genero>
+      <duracion>2h 45min</duracion>
+      <clasificacion>9.8</clasificacion>
+      <sinopsis>En un mundo donde los recuerdos son moneda, un agente solitario debe filtrar datos que pueden desmantelar el sistema.</sinopsis>
+      <horarios>
+        <horario>14:00</horario>
+        <horario>16:30</horario>
+        <horario>21:45</horario>
+      </horarios>
+      <sala>IMAX</sala>
+      <imagen>https://cdn.pixabay.com/video/2022/12/25/144257-784302968_tiny.jpg</imagen>
+    </pelicula>
+    <pelicula>
+      <id>2</id>
+      <titulo>The Void Walker</titulo>
+      <genero>Sci-Fi</genero>
+      <duracion>2h 20min</duracion>
+      <clasificacion>9.2</clasificacion>
+      <sinopsis>Una odisea espacial que explora los límites entre la realidad y el vacío.</sinopsis>
+      <horarios>
+        <horario>15:00</horario>
+        <horario>18:30</horario>
+      </horarios>
+      <sala>4K HDR</sala>
+      <imagen>https://www.hachettebookgroup.com/wp-content/uploads/2025/04/9781668649961_88e9fc.jpg</imagen>
+    </pelicula>
+    <pelicula>
+      <id>3</id>
+      <titulo>Sugar Rush World</titulo>
+      <genero>Animación</genero>
+      <duracion>1h 45min</duracion>
+      <clasificacion>9.0</clasificacion>
+      <sinopsis>Una aventura colorida y frenética donde nada es lo que parece.</sinopsis>
+      <horarios>
+        <horario>11:00</horario>
+        <horario>13:30</horario>
+      </horarios>
+      <sala>2D</sala>
+      <imagen>https://emmamccormickart.wordpress.com/wp-content/uploads/2014/12/sugar-rush.jpg</imagen>
+    </pelicula>
+  </peliculas>
+  <ofertas>
+    <oferta>
+      <id>1</id>
+      <nombre>2x1 los martes</nombre>
+      <descripcion>Segunda entrada 50% off todos los martes</descripcion>
+      <progreso>75</progreso>
+      <estado>activa</estado>
+    </oferta>
+    <oferta>
+      <id>2</id>
+      <nombre>Combo familiar</nombre>
+      <descripcion>Palomitas + 4 bebidas con descuento</descripcion>
+      <progreso>45</progreso>
+      <estado>consumido</estado>
+    </oferta>
+    <oferta>
+      <id>3</id>
+      <nombre>Noche de estudiantes</nombre>
+      <descripcion>40% off con credencial, miércoles</descripcion>
+      <progreso>20</progreso>
+      <estado>por terminar</estado>
+    </oferta>
+  </ofertas>
+</chullacine>

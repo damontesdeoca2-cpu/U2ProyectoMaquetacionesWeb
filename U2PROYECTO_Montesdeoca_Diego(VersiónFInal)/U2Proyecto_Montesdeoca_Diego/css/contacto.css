@@ -1,0 +1,74 @@
+/* ============================================================
+   BLOQUE 1: FORMULARIO DE CONTACTO
+============================================================ */
+#formulario-contacto, #mapa-ubicacion {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover personalizado respetando las pautas */
+#formulario-contacto:hover, #mapa-ubicacion:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(177, 59, 255, 0.12);
+}
+
+/* Personalización de los Form Controls de Bootstrap */
+.form-control {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: #b13bff !important;
+  box-shadow: 0 0 0 0.25rem rgba(177, 59, 255, 0.25) !important;
+}
+
+/* SOLUCIÓN: Placeholders más claros y legibles */
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1; /* Necesario para Firefox */
+}
+
+/* Personalización del Botón de Bootstrap */
+.btn-primary {
+  background: #b13bff !important;
+  border-color: #b13bff !important;
+  border-radius: 2rem !important;
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #9322e0 !important;
+  border-color: #9322e0 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(177, 59, 255, 0.4);
+}
+
+/* ============================================================
+   BLOQUE 2: TABLAS Y MAPA (Personalización)
+============================================================ */
+.table {
+  margin-bottom: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+#mapa-ubicacion iframe {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.muted {
+  color: #a0a0a0;
+}

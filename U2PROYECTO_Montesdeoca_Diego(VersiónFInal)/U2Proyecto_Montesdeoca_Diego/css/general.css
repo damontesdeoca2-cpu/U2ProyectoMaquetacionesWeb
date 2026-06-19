@@ -1,0 +1,532 @@
+/* ============================================================
+   BLOQUE 0: RESET Y VARIABLES GLOBALES
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #07060b;
+  --card: #0f0f14;
+  --accent: #b13bff;
+  --accent2: #f0f000;
+  --muted: #9fb0c6;
+  --text: #e6eef8;
+}
+
+/* ============================================================
+   BLOQUE 1: CONFIGURACIÓN GENERAL (Optimizado Mobile-first)
+============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top left, #1e1b33 0%, #090712 55%, #040306 100%);
+  color: #f4f5ff;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img, audio, video, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* ============================================================
+   BLOQUE 2: TÍTULOS, PÁRRAFOS Y ENLACES
+============================================================ */
+h1, h2, h3 {
+  color: #f8f8ff;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: 0.85rem;
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  margin-bottom: 0.7rem;
+}
+
+p, small, li, figcaption, label {
+  color: rgba(244, 245, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+p {
+  max-width: 60rem;
+}
+
+a {
+  color: #d5b0ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffd966;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   BLOQUE 3: HEADER Y NAVEGACIÓN
+============================================================ */
+.site-header {
+  background: rgba(4, 3, 10, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #b13bff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(244, 245, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease; /* Integrado del segundo CSS */
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  background: rgba(177, 59, 255, 0.2);
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.search {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  color: #f4f5ff;
+  width: 200px;
+}
+
+.search::placeholder {
+  color: #9fb0c6;
+}
+
+/* ============================================================
+   BLOQUE 4: BOTONES
+============================================================ */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #bc7cff, #5f69ff);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button.small {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+.button.secondary {
+  background: transparent;
+  border: 1px solid #b13bff;
+  color: #b13bff;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #d0b2ff, #8a39ff);
+}
+
+.button.secondary:hover {
+  background: rgba(177, 59, 255, 0.1);
+}
+
+/* ============================================================
+   BLOQUE 5: MAIN Y SECCIONES
+============================================================ */
+main {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+  padding: 1rem 0;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+/* ============================================================
+   BLOQUE 6: TARJETAS (CARDS)
+============================================================ */
+.card {
+  background: rgba(15, 15, 23, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Integrado box-shadow */
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(177, 59, 255, 0.1); /* Sombra estética morada integrada */
+}
+
+.poster-thumb {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 0.75rem;
+}
+
+/* ============================================================
+   BLOQUE 7: FORMULARIOS
+============================================================ */
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  color: rgba(244, 245, 255, 0.8);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f4f5ff;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+/* ============================================================
+   BLOQUE 8: TABLAS
+============================================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(15, 15, 23, 0.95);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ============================================================
+   BLOQUE 9: FOOTER
+============================================================ */
+footer {
+  background: rgba(6, 5, 12, 0.98);
+  padding: 3rem 0 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #14131a;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  color: #e6eef8;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background-color: #b13bff;
+  color: #fff !important;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ============================================================
+   BLOQUE 10: UTILIDADES
+============================================================ */
+.muted {
+  color: #9fb0c6;
+}
+
+.time-btn {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  color: #f4f5ff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.time-btn:hover {
+  background: #b13bff;
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: #fff;
+}
+
+.time-btn.sold {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ============================================================
+   BLOQUE 11: SOBREESCRITURAS PARA BOOTSTRAP
+============================================================ */
+.bg-dark {
+  background: rgba(6, 5, 12, 0.98) !important;
+}
+
+.carousel-item {
+  min-height: 400px;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.carousel-item .row {
+  min-height: 360px;
+  align-items: center;
+}
+
+.text-light, .text-white {
+  color: #f4f5ff !important;
+}
+
+.text-muted {
+  color: #9fb0c6 !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #bc7cff, #5f69ff) !important;
+  border: none !important;
+  border-radius: 2rem !important;
+  padding: 0.6rem 1.2rem !important;
+  font-weight: 600 !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #d0b2ff, #8a39ff) !important;
+}
+
+.btn-outline-light {
+  border-color: #b13bff !important;
+  color: #b13bff !important;
+  border-radius: 2rem !important;
+}
+
+.btn-outline-light:hover {
+  background: rgba(177, 59, 255, 0.1) !important;
+  color: #fff !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 1rem;
+  background-size: 50%;
+}
+
+.carousel-indicators button {
+  background-color: #b13bff !important;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2rem;
+}
+
+.modal-content {
+  background: #0f0f14;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f4f5ff;
+  border-radius: 1rem;
+}
+
+.modal-header {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.modal-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.form-control, .form-select {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f4f5ff;
+  border-radius: 0.75rem;
+  padding: 0.7rem 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: #b13bff !important;
+  box-shadow: 0 0 0 0.2rem rgba(177, 59, 255, 0.25) !important;
+}
+
+.form-label {
+  color: rgba(244, 245, 255, 0.8) !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.list-unstyled li {
+  margin-bottom: 0.4rem;
+}
+
+.list-unstyled li a {
+  color: #9fb0c6 !important;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.list-unstyled li a:hover {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+/* ============================================================
+   BLOQUE 12: MEDIA QUERIES (Inyección Responsiva Mobile-First)
+============================================================ */
+@media (max-width: 767px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .nav-list {
+    justify-content: center;
+  }
+  
+  .header-actions {
+    justify-content: center;
+  }
+  
+  .search {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .brand {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .brand {
+    font-size: 2rem;
+  }
+}
+

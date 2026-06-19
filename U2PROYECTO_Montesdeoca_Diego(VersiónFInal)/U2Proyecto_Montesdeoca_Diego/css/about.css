@@ -1,0 +1,101 @@
+/* ============================================================
+   BLOQUE 1: REESTRUCTURACIÓN DE TEXTOS Y TIPOGRAFÍAS
+============================================================ */
+.page-title {
+  font-weight: 700;
+  border-bottom: 2px solid rgba(177, 59, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.benefit-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.custom-list {
+  padding-left: 1.25rem;
+}
+
+.custom-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo estandarizado para las tarjetas oscuras */
+.card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(177, 59, 255, 0.1);
+}
+
+/* ============================================================
+   BLOQUE 2: PERSONALIZACIÓN DE BADGES DE BOOTSTRAP
+============================================================ */
+.bg-purple-neon {
+  background-color: rgba(177, 59, 255, 0.15) !important;
+  color: #cc8fff !important;
+  border: 1px solid rgba(177, 59, 255, 0.3);
+  font-size: 0.75rem;
+  padding: 0.35em 0.65em;
+  border-radius: 0.5rem;
+}
+
+/* ============================================================
+   BLOQUE 3: PERSONALIZACIÓN AVANZADA DEL ACCORDION DE BOOTSTRAP
+============================================================ */
+.accordion-custom {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+}
+
+.accordion-custom .accordion-item {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 0.75rem !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+/* Botón del encabezado del acordeón */
+.accordion-custom .accordion-button {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: none !important;
+  padding: 1.15rem 1.25rem;
+}
+
+/* Estado cuando el acordeón está desplegado (Remueve el fondo azul clásico de Bootstrap) */
+.accordion-custom .accordion-button:not(.collapsed) {
+  color: #b13bff !important;
+  background-color: rgba(177, 59, 255, 0.05) !important;
+  border-bottom: 1px solid rgba(177, 59, 255, 0.2);
+}
+
+/* Modificación del icono de la flecha nativa de Bootstrap a color blanco/morado */
+.accordion-custom .accordion-button::after {
+  filter: invert(1) brightness(2); /* Vuelve la flecha blanca por defecto */
+  transition: transform 0.2s ease;
+}
+
+.accordion-custom .accordion-button:not(.collapsed)::after {
+  filter: invert(41%) sepia(82%) saturate(3422%) hue-rotate(252deg) brightness(98%) contrast(104%); /* Tinta la flecha de morado al abrir */
+}
+
+.accordion-custom .accordion-body {
+  padding: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
